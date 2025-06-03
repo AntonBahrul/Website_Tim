@@ -1,19 +1,35 @@
+/* Background gradient animasi */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #f0f4f8, #cfd8dc);
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
   color: #333;
   min-height: 100vh;
 }
 
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 header {
-  background: #1976d2;
+  background: rgba(0, 0, 0, 0.7);
   padding: 2rem;
   text-align: center;
   color: white;
   position: sticky;
   top: 0;
   z-index: 10;
+  backdrop-filter: blur(6px);
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
@@ -32,14 +48,17 @@ h1 {
 }
 
 .member {
-  width: 250px;
+  width: 260px;
   border-radius: 1rem;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  background: rgba(255, 255, 255, 0.2);
   padding: 1.5rem;
   text-align: center;
   opacity: 0;
   transform: translateY(50px);
   transition: all 0.7s ease-out;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(255,255,255,0.3);
+  border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .member.visible {
@@ -54,17 +73,18 @@ h1 {
   object-fit: cover;
   margin-bottom: 1rem;
   border: 4px solid white;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 .member h3 {
   margin: 0.5rem 0 0.2rem;
   font-size: 1.2rem;
   font-weight: 600;
+  color: #fff;
 }
 
 .member p {
-  color: #444;
+  color: #f0f0f0;
   font-size: 0.95rem;
   margin: 0;
 }
@@ -72,7 +92,7 @@ h1 {
 footer {
   text-align: center;
   padding: 1rem;
-  background: #1976d2;
+  background: rgba(0, 0, 0, 0.6);
   color: white;
   font-size: 0.9rem;
 }
@@ -83,7 +103,3 @@ footer {
     opacity: 0;
   }
   to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
