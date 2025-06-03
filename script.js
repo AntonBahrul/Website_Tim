@@ -1,4 +1,4 @@
-// Observer untuk animasi masuk saat scroll
+// Animasi muncul saat elemen terlihat di viewport
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
